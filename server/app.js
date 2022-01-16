@@ -26,6 +26,11 @@ app.use(logger('dev'));
 app.use(cors());
 app.options('*', cors());
 
+/* Added home */
+app.get('/', (req, res, next) => {
+    res.status(200);
+    res.send('Hello World !');
+});
 
 /* swagger documentation start */
 const swaggerOption = {
