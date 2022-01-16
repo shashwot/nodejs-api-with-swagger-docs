@@ -1,7 +1,9 @@
+"use strict";
 const express = require('express')
 const bodyParser = require('body-parser')
 const swaggerJsdoc = require('swagger-jsdoc')
 const swaggerUi = require('swagger-ui-express')
+const logger = require('morgan');
 
 const port = 3000
 const app = express()
@@ -11,6 +13,7 @@ const usersRoutes = require('./routes/users.route')
 const postRoutes = require('./routes/post.route')
 
 app.use(bodyParser.json())
+app.use(logger('tiny'));
 
 const swaggerOption = {
     swaggerDefinition: (swaggerJsdoc.Options = {
