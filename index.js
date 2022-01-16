@@ -4,8 +4,10 @@ const bodyParser = require('body-parser')
 const swaggerJsdoc = require('swagger-jsdoc')
 const swaggerUi = require('swagger-ui-express')
 const logger = require('morgan');
+const dotenv = require("dotenv")
+dotenv.config()
 
-const port = 3000
+const port = process.env.APPLICATION_PORT || '3000';
 const app = express()
 
 
